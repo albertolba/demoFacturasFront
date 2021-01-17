@@ -1,0 +1,66 @@
+
+<div class="container mt-4">
+  <h5 class="card-title text-center mb-4">Alta Usuario</h5>
+  <form [formGroup]="formGroup">
+    <div class="form-row">
+      <div class="col-sm-4">
+        <label for="idCiente">Nombre y Apellidos</label>
+        <input  class="form-control form-control-sm" name="nombre"  formControlName="nombre"  type="text" />
+      </div>
+      <div class="col-sm-4">
+        <label for="idCiente">Dirección</label>
+        <input  class="form-control form-control-sm" name="direccion"  formControlName="direccion"  type="text" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-sm-5">
+        <label for="idCiente">E-mail</label>
+        <input  class="form-control form-control-sm" name="email"  formControlName="email"  type="text" />
+      </div>
+      <div class="col-sm-3">
+        <label for="idCiente">Tlf. Movil</label>
+        <input  class="form-control form-control-sm" name="tlf"  formControlName="tlf"  type="number" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-sm-2">
+        <label for="idCiente">Codigo Postal</label>
+        <input  class="form-control form-control-sm" name="cp"  formControlName="cp"  type="text" />
+      </div>
+      <div class="col-sm-3">
+        <label for="idCiente">Localidad</label>
+        <input  class="form-control form-control-sm" name="localidad"  formControlName="localidad"  type="text" />
+      </div>
+      <div class="col-sm-3">
+        <label for="idCiente">Provincia</label>
+        <input  class="form-control form-control-sm" name="provincia"  formControlName="provincia"  type="text" />
+      </div>
+    </div>
+  </form>
+
+  <button class="btn btn-primary mt-4" type="submit" (click)="guardar()">Guardar</button>
+
+
+  <table class="table table-striped table-sm mt-5">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">tlf</th>
+      <th scope="col">E-Mail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let el of listUsers">
+      <th scope="row">{{el.idCliente}}</th>
+      <td>{{el.nombre}}</td>
+      <td>{{el.tlf}}</td>
+      <td>{{el.email}}</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+
